@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Social from './App';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Social />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
