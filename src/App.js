@@ -1,31 +1,42 @@
 import React, { Component } from "react";
 
-class Equipe extends Component {
-    render() {
-        return (
-          <Sobre name={this.props.name} cargo={this.props.cargo}/>
-        );
-    }
-}
+class App extends Component {
 
-class Sobre extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            nome: 'Matheus',
+            contador: 0
+        };
+        //bind para que possa ser acesado:
+        this.aumentar = this.aumentar.bind(this);
+        this.diminuir = this.diminuir.bind(this);
+    }
+
+    aumentar() {
+        let state = this.state;
+        state.contador += 1;
+        state.nome='Aumentou';
+        this.setState(state);
+    }
+
+    diminuir() {
+        let state = this.state;
+        state.contador -= 1;
+        state.nome='Diminuiu';
+        this.setState(state);
+    }
     render() {
         return (
             <div>
-                <h2>Olá eu sou o {this.props.name}</h2>
-                <h2>Com o cargo {this.props.cargo}</h2>
+                <h1>Contador:</h1>
+                {this.state.nome}
+                <h3><button onClick={this.diminuir}>-</button>
+                    {this.state.contador}
+                    <button onClick={this.aumentar}>+</button>
+                </h3>
             </div>
         );
     }
 }
-
-function App() {
-    return (
-        <div>
-            <h1>Conheça nossa equipe</h1>
-            <Equipe name="Matheus" cargo="Desenvolvedor" />
-        </div>
-    );
-}
-
 export default App;
