@@ -6,8 +6,8 @@ import Sobre from './pages/Sobre'
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Route exact path="/" component={Home}/>
-            <Route path="/sobre" component ={Sobre}/>
+            <Route path="/" component={Home}/>
+            {/* <Route path="/sobre" component ={Sobre}/> */}
             {/* <Switch/> */}
         </BrowserRouter>
     );
