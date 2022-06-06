@@ -24,6 +24,7 @@ class Home extends Component{
         .then((json)=>{
             //quando recebe o json
             this.setState({filmes: json})
+            console.log(json);
         })
     }
 
